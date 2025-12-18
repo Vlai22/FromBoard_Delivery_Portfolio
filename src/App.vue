@@ -81,7 +81,7 @@ export default{
             <div>
                 <h1 class="section_1_h1">Без проблемная доставка купленных вещей из США, Европы и Азии в Россию</h1>
                 <p class="section_1_p">Сэкономьте на покупках и наслаждайтесь мировыми брендами — наш сервис позволяет вам легко и удобно заказывать товары со всего мира и получать их в России</p>
-                <img class="section_1_img" src="../public/" alt="img_1">
+                <img class="section_1_img" src="../public/img_1.jpg" alt="img_1">
             </div>
             <Calculator></Calculator>
         </section>
