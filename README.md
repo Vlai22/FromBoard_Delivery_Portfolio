@@ -1,2 +1,2 @@
 Данная ветка является частью проекта и демонтрирует сайт.
-Для просмотра сайта необходимо пройти по следующей ссылке https://vlai22.github.io/FromBoard_Delivery_Portfolio/
+Для просмотра сайта необходимо пройти по следующей ссылке https://vlai22.github.io/FromBoard_Delivery_Portfolio//
