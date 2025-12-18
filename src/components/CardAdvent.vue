@@ -29,9 +29,10 @@ export default{
 </template>
 <style scoped>
 .card_box{
-    width: 486px;
-    height: 184px;
+    width: 372px;
+    height: 140px;
     padding: 24px;   
+    display: flex;
 }
 img{
     width: 136px;

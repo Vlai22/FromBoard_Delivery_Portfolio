@@ -23,8 +23,7 @@ export default{
 <style scoped>
 .card_box{
     width: 366px;
-    height: 407px;
-    margin: 24px;   
+    height: 407px;  
     padding: 0;
     display: flex;
     flex-direction: column;

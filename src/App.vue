@@ -88,12 +88,12 @@ export default{
         <section class="section_2">
           <h2 class="section_2_h2">Наши преимущества</h2>
           <div class="section_2_box">
-              <CardAdvent :img="'board.svg'" :text="'Мы берём на себя все формальности и бумажную волокиту, связанную с растаможкой груза'" :title="'Растоможка груза'"></CardAdvent>
-              <CardAdvent :img="'package.svg'" :text="'Все товары упаковываются нашими специалистами с особым вниманием к деталям, гарантируя, что они дойдут в безопасности и в отличном состоянии'" :title="'Надёжная упаковка'"></CardAdvent>
+              <CardAdvent style="margin: 0 24px 0 0;" :img="'board.svg'" :text="'Мы берём на себя все формальности и бумажную волокиту, связанную с растаможкой груза'" :title="'Растоможка груза'"></CardAdvent>
+              <CardAdvent style="margin: 0 24px 0 0;" :img="'package.svg'" :text="'Все товары упаковываются нашими специалистами с особым вниманием к деталям, гарантируя, что они дойдут в безопасности и в отличном состоянии'" :title="'Надёжная упаковка'"></CardAdvent>
               <CardAdvent :img="'delivery.svg'" :text="'Мы предлагаем быструю и выгодную доставку, чтобы вы могли насладиться покупками как можно скорее.'" :title="'Быстро и выгодно'"></CardAdvent>
-              <CardAdvent :img="'best_support.svg'" :text="'Стремимся сделать процесс доставки максимально удобным для вас, чтобы опыт остался приятным и беззаботным'" :title="'Удобный сервис'"></CardAdvent>
-              <CardAdvent :img="'clear_info.svg'" :text="'Мы предоставляем полный контроль над каждым этапом доставки, от момента заказа до момента прибытия заказа'" :title="'Прозрачность работы'"></CardAdvent>
-              <CardAdvent :img="'garantee.svg'" :text="'Наше страхование обеспечивает полную защиту и покрытие почти все неприятные и неожиданные ситуации'" :title="'Страхование груза'"></CardAdvent>
+              <CardAdvent style="margin: 0 24px 0 0;":img="'best_support.svg'" :text="'Стремимся сделать процесс доставки максимально удобным для вас, чтобы опыт остался приятным и беззаботным'" :title="'Удобный сервис'"></CardAdvent>
+              <CardAdvent style="margin: 0 24px 0 0;" :img="'clear_info.svg'" :text="'Мы предоставляем полный контроль над каждым этапом доставки, от момента заказа до момента прибытия заказа'" :title="'Прозрачность работы'"></CardAdvent>
+              <CardAdvent  :img="'garantee.svg'" :text="'Наше страхование обеспечивает полную защиту и покрытие почти все неприятные и неожиданные ситуации'" :title="'Страхование груза'"></CardAdvent>
           </div>
         </section>
         <section class="section_3">
@@ -169,7 +169,7 @@ main{
 }
 section{
   display: flex;
-  min-width: 1536px;
+  max-width: 1536px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -289,6 +289,9 @@ footer{
     flex-direction: row;
     align-items: center;
   }
+    .section_3_box{
+    flex-wrap: wrap;
+  }
   .section_3_box{
     flex-wrap: wrap;
   }
@@ -299,6 +302,44 @@ footer{
     width: 100%;
   }
   .footer_box_info{
+    width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  section{
+    width: 100%;
+  }
+  .section_1{
+    flex-direction: column;
+  }
+  .section_2_box{
+    flex-direction: row;
+    align-items: center;
+  }
+    .section_3_box{
+    flex-wrap: wrap;
+  }
+  .section_5{
+    width: 100%;
+  }
+  footer{
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer_box_nav{
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer_box_info{
+    width: 100%;
+    flex-direction: column;
+  }
+  .footer_box_info p{
+    width: 100%;
+  }
+  .footer_box_info_artist{
     width: 100%;
   }
 }

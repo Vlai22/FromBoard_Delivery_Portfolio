@@ -23,6 +23,7 @@ export default{
 <style scoped>
 .card_box{
     width: 626px;
+    flex: 0 0 auto; /* Не растягивается и не сжимается */
     height: 350px;
     position: relative;
     display: flex;
@@ -48,13 +49,22 @@ h3{
 p{
     font-size: 24px;
     font-weight: 700;
+
     text-wrap: wrap;
     margin-top: 32px;
     margin-left: 43px;
 }
 @media (min-width: 1024px) and (max-width: 1536px) {
     .card_box{
-        width: 396px;
+        min-width: 396px;
+    }
+    p{
+        width: 360px;
+    }
+}
+@media (max-width: 1024px) {
+    .card_box{
+        min-width: 442px;
     }
     p{
         width: 360px;
