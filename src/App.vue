@@ -88,16 +88,12 @@ export default{
         <section class="section_2">
           <h2 class="section_2_h2">Наши преимущества</h2>
           <div class="section_2_box">
-            <div>
               <CardAdvent :img="'board.svg'" :text="'Мы берём на себя все формальности и бумажную волокиту, связанную с растаможкой груза'" :title="'Растоможка груза'"></CardAdvent>
               <CardAdvent :img="'package.svg'" :text="'Все товары упаковываются нашими специалистами с особым вниманием к деталям, гарантируя, что они дойдут в безопасности и в отличном состоянии'" :title="'Надёжная упаковка'"></CardAdvent>
               <CardAdvent :img="'delivery.svg'" :text="'Мы предлагаем быструю и выгодную доставку, чтобы вы могли насладиться покупками как можно скорее.'" :title="'Быстро и выгодно'"></CardAdvent>
-            </div>
-            <div>
               <CardAdvent :img="'best_support.svg'" :text="'Стремимся сделать процесс доставки максимально удобным для вас, чтобы опыт остался приятным и беззаботным'" :title="'Удобный сервис'"></CardAdvent>
               <CardAdvent :img="'clear_info.svg'" :text="'Мы предоставляем полный контроль над каждым этапом доставки, от момента заказа до момента прибытия заказа'" :title="'Прозрачность работы'"></CardAdvent>
               <CardAdvent :img="'garantee.svg'" :text="'Наше страхование обеспечивает полную защиту и покрытие почти все неприятные и неожиданные ситуации'" :title="'Страхование груза'"></CardAdvent>
-            </div>
           </div>
         </section>
         <section class="section_3">
@@ -173,7 +169,7 @@ main{
 }
 section{
   display: flex;
-  width: 1536px;
+  min-width: 1536px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -208,11 +204,8 @@ section p{
 }
 .section_2_box{
   display: flex;
-  flex-direction: column;
-}
-.section_2_box div{
-  display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .section_3_box{
   display: flex;
@@ -284,5 +277,29 @@ footer{
   margin: 0;
   font-size: 12;
   color: #6B7280;
+}
+@media (min-width: 1024px) and (max-width: 1536px) {
+  section{
+    width: 100%;
+  }
+  .section_1{
+    flex-direction: column;
+  }
+  .section_2_box{
+    flex-direction: row;
+    align-items: center;
+  }
+  .section_3_box{
+    flex-wrap: wrap;
+  }
+  .section_5{
+    width: 100%;
+  }
+  .footer_box_nav{
+    width: 100%;
+  }
+  .footer_box_info{
+    width: 100%;
+  }
 }
 </style>

@@ -25,22 +25,24 @@ export default{
             let slider = document.getElementById(this.slider_name);
             let box = slider.children[1].children[0];
             let box_width = box.children[0].getBoundingClientRect().width;
+            let box_length = Math.floor(box.parentNode.getBoundingClientRect().width / box_width)
             let box_pos = Math.floor(Math.abs(Number(box.style.marginLeft.replace('px', ''))) / box_width);
             if(Number(box.style.marginLeft.replace('px', '')) == 0){
                 box.style.marginLeft = String(-1 * box_width *(this.slides.length-2) - (24*(this.slides.length-2))) + 'px';
             }else if (Number(box.style.marginLeft.replace('px', '')) <= 0){
-                box.style.marginLeft = String(-1*(box_width * (box_pos - 2))) + 'px';
+                box.style.marginLeft = String(-1*(box_width * (box_pos - box_length))) + 'px';
             }
         },
         moveright(){
             let slider = document.getElementById(this.slider_name);
             let box = slider.children[1].children[0];
             let box_width = box.children[0].getBoundingClientRect().width + 24;
+            let box_length = Math.floor(box.getBoundingClientRect().width / box_width)
             let box_pos = Math.floor(Math.abs(Number(box.style.marginLeft.replace('px', ''))) / box_width);
             if(Number(box.style.marginLeft.replace('px', '')) <= -1*box_width*(this.slides.length-2)){
                 box.style.marginLeft = '0px';
             }else if (Number(box.style.marginLeft.replace('px', '')) >= -1*box_width*(this.slides.length-2)){
-                box.style.marginLeft = String(-1*(box_width * (box_pos + 2))) + 'px';
+                box.style.marginLeft = String(-1*(box_width * (box_pos + box_length))) + 'px';
             }
         }
     }
@@ -69,12 +71,12 @@ export default{
     height: 60px;
 }
 .slider_arrow_left{
-    margin-left: 23px;
-    margin-right: 47px;
+    margin-left: 10px;
+    margin-right: 35px;
 }
 .slider_arrow_right{
-    margin-left: 47px;
-    margin-right: 23px;
+    margin-left: 35px;
+    margin-right: 10px;
 }
 .slider_cards_box{
     width: 1276px;
@@ -85,5 +87,10 @@ export default{
     padding: 0;
     display: flex;
     transition: all 1s;
+}
+@media (min-width: 1024px) and (max-width: 1536px) {
+    .slider{
+    width: 1026px;
+    }
 }
 </style>

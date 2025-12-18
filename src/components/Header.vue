@@ -76,9 +76,14 @@ header{
     margin: 0;
 }
 .head_rigth_box_text_box_phone_text{
-    font-size: 24px;  
+    font-size: 20px;  
     font-weight: 300;
     padding: 0;
     margin: 0;
+}
+@media (min-width: 1024px) and (max-width: 1536px) {
+    header{
+        width: 100%;
+    }
 }
 </style>

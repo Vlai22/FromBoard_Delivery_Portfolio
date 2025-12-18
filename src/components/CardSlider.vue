@@ -22,7 +22,7 @@ export default{
 </template>
 <style scoped>
 .card_box{
-    min-width: 626px;
+    width: 626px;
     height: 350px;
     position: relative;
     display: flex;
@@ -48,9 +48,16 @@ h3{
 p{
     font-size: 24px;
     font-weight: 700;
-    width: 540px;
     text-wrap: wrap;
     margin-top: 32px;
     margin-left: 43px;
+}
+@media (min-width: 1024px) and (max-width: 1536px) {
+    .card_box{
+        width: 396px;
+    }
+    p{
+        width: 360px;
+    }
 }
 </style>

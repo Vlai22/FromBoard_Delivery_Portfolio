@@ -1,4 +1,4 @@
-@font-face { font-family: "Formular"; src: url("../fonts/formular/Formular.ttf"); }
+@font-face { font-family: "Formular"; src: url("../../public/Formular.ttf"); }
 #app {
   display: flex;
   flex-direction: column;
