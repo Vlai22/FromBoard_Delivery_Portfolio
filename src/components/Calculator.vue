@@ -57,4 +57,9 @@ p{
     text-wrap: wrap;
     margin: 0 0 0 0;
 } 
+@media (max-width: 1024px) {
+    .claculator_box{
+        width: 640px;
+    } 
+}
 </style>

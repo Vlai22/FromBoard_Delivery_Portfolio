@@ -81,7 +81,7 @@ export default{
             <div>
                 <h1 class="section_1_h1">Без проблемная доставка купленных вещей из США, Европы и Азии в Россию</h1>
                 <p class="section_1_p">Сэкономьте на покупках и наслаждайтесь мировыми брендами — наш сервис позволяет вам легко и удобно заказывать товары со всего мира и получать их в России</p>
-                <img class="section_1_img" src="../public/img_1.jpg" alt="img_1">
+                <img class="section_1_img" src="/img_1.jpg" alt="img_1">
             </div>
             <Calculator></Calculator>
         </section>
@@ -151,20 +151,12 @@ export default{
 </template>
 
 <style scoped>
-body{
-  display: flex;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-}
 main{
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 72px;
   background-color: #E5E7EB;
 }
 section{
@@ -173,7 +165,7 @@ section{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: 50px;
+  margin: 50px;
 }
 section h1{
   width: 756px;
@@ -193,6 +185,8 @@ section p{
 }
 .section_1{
   flex-direction: row;
+  margin-left: 0;
+  margin-right: 0;
 }
 .section_1_p{
   text-align: left;
@@ -309,8 +303,17 @@ footer{
   section{
     width: 100%;
   }
+  section p{
+    width: 640px;
+  }
+  section h1{
+    width: 640px;
+  }
   .section_1{
     flex-direction: column;
+  }
+  .section_1_img{
+    width: 640px;
   }
   .section_2_box{
     flex-direction: row;

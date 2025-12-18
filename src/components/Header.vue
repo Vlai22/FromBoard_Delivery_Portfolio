@@ -5,6 +5,27 @@ import ButtonHead from './UI/ButtonHead.vue';
 export default{
     components: {
         Logo, Button, ButtonHead
+    },
+    methods:{
+        scrollToSection(e){
+            let element = document.getElementsByTagName('section')[e]
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: "start"
+            });
+        },
+        clickBurger(){
+            let e = document.getElementById('active_box_burger');
+            if(e.style.marginTop == "-300px"){
+                e.style.marginTop = "0px";
+            }else{
+                e.style.marginTop = "-300px";
+            }
+
+        }
+    },
+    data(){
+        
     }
 }
 </script>
@@ -14,10 +35,10 @@ export default{
         <div class="head_left_box">
             <Logo></Logo>
             <div>
-                <ButtonHead :text="'Калькулятор'" :isActive="true"></ButtonHead>
-                <ButtonHead :text="'О нас'" :isActive="false"></ButtonHead>
-                <ButtonHead :text="'Гарантия'" :isActive="false"></ButtonHead>
-                <ButtonHead :text="'Отзывы'" :isActive="false"></ButtonHead>
+                <ButtonHead @click="scrollToSection(0)" :text="'Калькулятор'" :isActive="false"></ButtonHead>
+                <ButtonHead @click="scrollToSection(1)" :text="'О нас'" :isActive="false"></ButtonHead>
+                <ButtonHead @click="scrollToSection(2)" :text="'Гарантия'" :isActive="false"></ButtonHead>
+                <ButtonHead @click="scrollToSection(3)" :text="'Отзывы'" :isActive="false"></ButtonHead>
             </div>
         </div>
         <div class="head_right_box">
@@ -29,30 +50,30 @@ export default{
                     <p class="head_rigth_box_text_box_phone_text">Звонки по России бесплатны</p>  
                 </div>
             </div>
-            <Button :width="'width: 196px;'" class="head_right_box_button" :text="'Оставить заявку'"></Button>
+            <Button @click="scrollToSection(0)" :width="'width: 196px;'" class="head_right_box_button" :text="'Оставить заявку'"></Button>
         </div>
     </header>
-    <header class="burger">
+    <header  class="burger">
         <div class="burger_head_top_box">
             <Logo></Logo>
             <div>
                 <p class="burger_head_top_box_phone_number">+7 (800) 123 45-67</p>
-                <div class="burger_head_top_box_burger">
+                <div @click="clickBurger()" class="burger_head_top_box_burger">
                     <div class="burger_head_top_box_burger_line"></div>
                     <div class="burger_head_top_box_burger_line"></div>
                     <div class="burger_head_top_box_burger_line"></div>
                 </div>
             </div>
         </div>
-        <div id="active_box_burger">
+        <div style="margin-top: -300px;" id="active_box_burger">
             <div>
                 <div class="burger_head_second_box_text_box_line"></div>
                 <div class="burger_head_second_box_button_box">
-                    <ButtonHead :text="'Калькулятор'" :isActive="true"></ButtonHead>
-                    <ButtonHead :text="'О нас'" :isActive="false"></ButtonHead>
-                    <ButtonHead :text="'Гарантия'" :isActive="false"></ButtonHead>
-                    <ButtonHead :text="'Отзывы'" :isActive="false"></ButtonHead>
-                    <Button :width="'width: 196px;'" class="burger_head_second_box_button" :text="'Оставить заявку'"></Button>   
+                    <ButtonHead @click="scrollToSection(0)" :text="'Калькулятор'" :isActive="false"></ButtonHead>
+                    <ButtonHead @click="scrollToSection(1)" :text="'О нас'" :isActive="false"></ButtonHead>
+                    <ButtonHead @click="scrollToSection(2)" :text="'Гарантия'" :isActive="false"></ButtonHead>
+                    <ButtonHead @click="scrollToSection(3)" :text="'Отзывы'" :isActive="false"></ButtonHead>
+                    <Button @click="scrollToSection(0)" :width="'width: 196px;'" class="burger_head_second_box_button" :text="'Оставить заявку'"></Button>   
                 </div>
                 <div class="burger_head_second_box_text_box_line"></div>
             </div>
@@ -73,7 +94,9 @@ export default{
 }
 .burger{
     display: none;
+    width: 100%;
     flex-direction: column;
+    align-items: center;
 }
 .head_left_box{
     display: flex;
@@ -120,7 +143,10 @@ export default{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 24px;
+    overflow: hidden;
+    z-index: 10;
+    background-color: white;
+    width: 100%;
 }
 .burger_head_top_box div{
     display: flex;
@@ -164,7 +190,7 @@ export default{
     text-align: center;
 }
 #active_box_burger{
-    display: none;
+    transition: all 0.5s;
 }
 @media (min-width: 1024px) and (max-width: 1536px) {
     .full{
@@ -174,6 +200,7 @@ export default{
 @media (max-width: 1024px) {
     .burger{
         display: flex;
+        width: 100%;
     }
     .full{
         display: none;
