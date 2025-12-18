@@ -1,0 +1,9 @@
+@font-face { font-family: "Formular"; src: url("../fonts/formular/Formular.ttf"); }
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-weight: normal;
+  font-family: 'Formular';
+}
